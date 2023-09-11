@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wynik</title>
+    <style>
+        body {
+            background-color: #121212; /* Kolor tła */
+            color: #29b6f6; /* Kolor tekstu */
+            font-family: 'Orbitron', sans-serif; /* Wybrana czcionka */
+            text-align: center; /* Wyrównanie tekstu na środku */
+        }
+        
+        h1, h2 {
+            color: #29b6f6; /* Kolor nagłówków */
+        }
+
+        form {
+            margin: 0 auto; /* Wyrównanie formularza na środku */
+            max-width: 400px; /* Maksymalna szerokość formularza */
+            padding: 20px;
+            background-color: #212121; /* Kolor tła formularza */
+            border: 2px solid #29b6f6; /* Kolor obramowania formularza */
+            border-radius: 10px; /* Zaokrąglenie rogów formularza */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left; /* Wyrównanie etykiety do lewej */
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #1f1f1f; /* Kolor tła pól tekstowych */
+            color: #29b6f6; /* Kolor tekstu w polach tekstowych */
+            border: 1px solid #29b6f6; /* Kolor obramowania pól tekstowych */
+            border-radius: 5px; /* Zaokrąglenie rogów pól tekstowych */
+        }
+
+        input[type="submit"] {
+            background-color: #29b6f6; /* Kolor tła przycisku */
+            color: #121212; /* Kolor tekstu na przycisku */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px; /* Zaokrąglenie rogów przycisku */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1c7db0; /* Kolor tła przycisku po najechaniu myszką */
+        }
+
+        #result {
+            text-align: left; /* Wyrównanie wyników do lewej */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wynik {{ operation }}</h1>
+    
+    <p>{{ operation }} wiadomość:</p>
+    <p>{{ message }}</p>
+
+    <p>Klucz: {{ user_key }}</p>
+
+    {% if error_message %}
+    <p style="color: red;">Błąd: {{ error_message }}</p>
+    {% endif %}
+
+    <p><a href="/">Powrót</a></p>
+</body>
+</html>
